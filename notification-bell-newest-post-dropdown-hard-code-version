@@ -135,6 +135,8 @@
 ]]></b:skin>
   </head>
   <body>
+<div class='header-container'>
+    <header class='header'>
 <!-- Notification Bell Section -->
 <nav class='notification-container'>
     <span class='material-symbols-rounded bell-icon' onclick='toggleDropdown()'>notifications</span>
