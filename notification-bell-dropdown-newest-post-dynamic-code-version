@@ -1,0 +1,133 @@
+<!-- Define Variables in the Template -->
+<b:variable name='bellIconColor' default='#ececeb' type='color' value='#ececeb'/>
+<b:variable name='bellIconHoverColor' default='#ffffff' type='color' value='#ffffff'/>
+<b:variable name='dropdownBgColor' default='#1c1c1e' type='color' value='#1c1c1e'/>
+<b:variable name='dropdownHoverGlow' default='rgba(236, 236, 235, 0.8)' type='color' value='rgba(236, 236, 235, 0.8)'/>
+<b:variable name='textColor' default='#ececeb' type='color' value='#ececeb'/>
+<b:variable name='hoverTextColor' default='#ffffff' type='color' value='#ffffff'/>
+<b:variable name='imageHoverGlow' default='rgba(236, 236, 235, 0.8)' type='color' value='rgba(236, 236, 235, 0.8)'/>
+
+<!-- The Skin Section -->
+<b:skin><![CDATA[
+/* Bell Icon */
+.bell-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: <expr:variable name='bellIconColor'/>; /* Dynamic bell icon color */
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glow effect on hover for the bell icon */
+.bell-icon:hover {
+    color: <expr:variable name='bellIconHoverColor'/>; /* Dynamic hover color */
+    box-shadow: 0 0 8px <expr:variable name='dropdownHoverGlow'/>; /* Dynamic glow effect */
+}
+
+.notification-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: <expr:variable name='dropdownBgColor'/>; /* Dynamic dropdown background color */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    min-width: 250px;
+    max-width: 350px;
+    z-index: 9999;
+    overflow: auto;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Display dropdown when .active class is applied */
+.notification-container .dropdown-menu.active {
+    display: block;
+}
+
+/* Add a glow effect on hover for the dropdown container */
+.notification-container:hover .dropdown-menu {
+    box-shadow: 0 0 12px <expr:variable name='dropdownHoverGlow'/>; /* Dynamic glow effect */
+}
+
+/* Title styling for the featured post */
+#FeaturedPost1 .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: <expr:variable name='textColor'/>; /* Dynamic text color */
+    margin-bottom: 1px;
+    text-align: center;
+    display: block;
+    padding: 10px;
+}
+
+/* Remove underline and add glow effect on hover for the title */
+#FeaturedPost1 .title a {
+    text-decoration: none;
+    color: <expr:variable name='textColor'/>; /* Dynamic text color */
+    transition: text-shadow 0.3s ease;
+}
+
+/* Glow effect on hover for the title */
+#FeaturedPost1 .title a:hover {
+    color: <expr:variable name='hoverTextColor'/>; /* Dynamic hover text color */
+    text-shadow: 0 0 8px <expr:variable name='dropdownHoverGlow'/>; /* Dynamic glow effect */
+    text-decoration: none;
+}
+
+/* Post summary styling */
+.post-summary {
+    padding: 5px 10px;
+    color: <expr:variable name='textColor'/>; /* Dynamic text color */
+    overflow: hidden;
+    margin-top: 1px;
+}
+
+/* Remove underline and add glow effect on hover for post titles */
+.post-summary h3 a {
+    color: <expr:variable name='textColor'/>; /* Dynamic post title color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: text-shadow 0.3s ease;
+}
+
+/* Glow effect on hover for post titles */
+.post-summary h3 a:hover {
+    color: <expr:variable name='hoverTextColor'/>; /* Dynamic hover text color */
+    text-shadow: 0 0 8px <expr:variable name='dropdownHoverGlow'/>; /* Dynamic glow effect */
+    text-decoration: none;
+}
+
+/* Paragraph styling in post summary */
+.post-summary p {
+    color: <expr:variable name='textColor'/>; /* Dynamic text color */
+    margin-top: 3px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Image styling in post summary */
+.post-summary img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Glow effect on hover for images */
+.post-summary img:hover {
+    box-shadow: 0 0 12px <expr:variable name='imageHoverGlow'/>; /* Dynamic image hover glow */
+}
+]]></b:skin>
