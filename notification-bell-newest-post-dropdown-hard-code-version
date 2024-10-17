@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:js='true' b:layoutsVersion='3' b:render='true' b:responsive='true' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+     <script type='text/javascript'>
+    <![CDATA[
+      document.addEventListener("DOMContentLoaded", function() {
+        let lazyImages = document.querySelectorAll(".item-thumbnail img[data-src]");
+        lazyImages.forEach(img => {
+          img.src = img.getAttribute('data-src');
+        });
+      });
+    ]]>
+  </script>
+  	<!-- External Stylesheets -->
+		<link href='https://fonts.googleapis.com/css2?family=IM+Fell+English&amp;display=swap' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' rel='stylesheet'/>
+<b:skin><![CDATA[
+/* Bell Icon */
+.bell-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto; /* Keeps the bell icon aligned */
+    margin-right: auto;
+    position: relative;
+    color: #ececeb; /* Default color for the icon */
+    transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for color and glow */
+}
+/* Glow effect on hover for the bell icon */
+.bell-icon:hover {
+    color: #ffffff; /* Change icon color on hover */
+    box-shadow: 0 0 8px rgba(236, 236, 235, 0.8); /* Glow effect with hover color */
+}
+/* Notification container */
+.notification-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px; /* Adjust for spacing around bell icon */
+}
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 40px; /* Position it below the bell icon */
+    left: 50%; /* Position to the center horizontally */
+    transform: translateX(-50%); /* Adjust to align exactly in the center */
+    background-color: #1c1c1e; /* Dark background for dropdown */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    min-width: 250px; /* Adjust width to fit the featured post */
+    max-width: 350px; /* Adjust maximum width for larger content */
+    z-index: 9999; /* Ensure dropdown stays above other content */
+    overflow: auto; /* Allows scrolling if content exceeds available space */
+    transition: box-shadow 0.3s ease; /* Add transition for glow effect */
+}
+/* Display dropdown when .active class is applied */
+.notification-container .dropdown-menu.active {
+    display: block; /* Shows the dropdown when active */
+}
+/* Add a glow effect on hover for the dropdown container */
+.notification-container:hover .dropdown-menu {
+    box-shadow: 0 0 12px rgba(236, 236, 235, 0.8); /* Soft glow effect */
+}
+/* Title styling for the featured post */
+#FeaturedPost1 .title {
+    font-size: 20px; /* Adjust the font size */
+    font-weight: bold; /* Make the title bold */
+    color: #ececeb; /* Set title color to match the theme */
+    margin-bottom: 1px; /* Reduce space below the title */
+    text-align: center; /* Center the text horizontally */
+    display: block;
+    padding: 10px;
+}
+/* Remove underline and add glow effect on hover for the title */
+#FeaturedPost1 .title a {
+    text-decoration: none; /* Ensure no underline by default */
+    color: #ececeb;
+    transition: text-shadow 0.3s ease; /* Smooth transition for glow */
+}
+
+/* Glow effect on hover for the title */
+#FeaturedPost1 .title a:hover {
+    color: #ffffff; /* Change color slightly on hover */
+    text-shadow: 0 0 8px rgba(236, 236, 235, 0.8); /* Add a soft glow effect */
+    text-decoration: none; /* Ensure underline is removed */
+}
+
+/* Post summary styling */
+.post-summary {
+    padding: 5px 10px; /* Reduced padding to bring elements closer */
+    color: #ececeb;
+    overflow: hidden; /* Prevents content overflow */
+    margin-top: 1px; /* Reduce spacing between post-summary and title */
+}
+
+/* Remove underline and add glow effect on hover for post titles */
+.post-summary h3 a {
+    color: #ececeb; /* Featured post title color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the post title bold */
+    font-size: 18px; /* Adjust the font size */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glow */
+}
+
+/* Glow effect on hover for post titles */
+.post-summary h3 a:hover {
+    color: #ffffff; /* Change color slightly on hover */
+    text-shadow: 0 0 8px rgba(236, 236, 235, 0.8); /* Add a soft glow effect */
+    text-decoration: none; /* Ensure underline is removed */
+}
+
+/* Paragraph styling in post summary */
+.post-summary p {
+    color: #ececeb;
+    margin-top: 3px; /* Reduced margin to bring text closer to the title */
+    font-size: 14px; /* Adjust font size for better readability */
+    line-height: 1.4; /* Improve text spacing for readability */
+}
+
+/* Image styling in post summary */
+.post-summary img {
+    max-width: 100%; /* Ensures image fits within dropdown */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 8px; /* Reduced margin to bring image closer */
+    transition: box-shadow 0.3s ease; /* Smooth transition for glow */
+}
+
+/* Glow effect on hover for images */
+.post-summary img:hover {
+    box-shadow: 0 0 12px rgba(236, 236, 235, 0.8); /* Soft glow effect for image */
+}
+
+]]></b:skin>
+  </head>
+  <body>
+<!-- Notification Bell Section -->
+<nav class='notification-container'>
+    <span class='material-symbols-rounded bell-icon' onclick='toggleDropdown()'>notifications</span>
+
+    <div class='dropdown-menu'>
+        <!-- Featured Post (Moved inside the dropdown) -->
+        <div class='widget-container'>
+            <!-- Make the entire section clickable by linking to the most recent post -->
+            <a expr:href='data:postUrl'>
+                <!-- Define a section for dynamic widgets -->
+                <b:section class='widget NotificationWidget' id='notification-section' showaddelement='yes'>
+                  <b:widget id='FeaturedPost1' locked='false' title='Newest Post' type='FeaturedPost' version='1'>
+                    <b:widget-settings>
+                      <b:widget-setting name='showSnippet'>true</b:widget-setting>
+                      <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+                      <b:widget-setting name='postId'>0</b:widget-setting>
+                      <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+                      <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+                    </b:widget-settings>
+                    <b:includable id='main'>
+                            <!-- Display title if non-empty -->
+                            <b:if cond='data:title != &quot;&quot;'>
+                                <h2 class='title'><data:title/></h2>
+                            </b:if>
+                            <b:include name='content'/>
+                            <b:include name='quickedit'/>
+                        </b:includable>
+                    <b:includable id='content'>
+                            <div class='post-summary'>
+                                <!-- Display post title if available -->
+                                <b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'>
+                                    <h3><data:postTitle/></h3>
+                                </b:if>
+                                
+                                <!-- Display post snippet if available -->
+                                <b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
+                                    <p><data:postSummary/></p>
+                                </b:if>
+                                
+                                <!-- Display first image if available -->
+                                <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
+                                    <img class='image' expr:src='data:postFirstImage'/>
+                                </b:if>
+                            </div>
+                        </b:includable>
+                  </b:widget>
+                </b:section>
+            </a>
+        </div> <!-- End of widget-container -->
+    </div> <!-- End of dropdown-menu -->
+</nav>
+
+</header> <!-- Closing the header -->
+
+<script type='text/javascript'>
+  // <![CDATA[
+   document.addEventListener('DOMContentLoaded', function () {
+    // Dropdown toggle functionality
+    function toggleDropdown() {
+        const dropdown = document.querySelector('.dropdown-menu');
+        dropdown.classList.toggle('active');
+    }
+
+    // Function to close dropdown
+    function closeDropdown() {
+        const dropdown = document.querySelector('.dropdown-menu');
+        dropdown.classList.remove('active');
+    }
+
+    // Event listener for the notification bell
+    const bellIcon = document.querySelector('.bell-icon');
+    if (bellIcon) {
+        bellIcon.addEventListener('click', function(event) {
+            event.stopPropagation();
+            toggleDropdown();
+        });
+    }
+
+    // Event listener for clicking outside the dropdown
+    document.addEventListener('click', function(event) {
+        const dropdown = document.querySelector('.dropdown-menu');
+        const bellIcon = document.querySelector('.bell-icon');
+        if (dropdown && !dropdown.contains(event.target) && event.target !== bellIcon) {
+            closeDropdown();
+        }
+    });
+
+    // Make the title clickable
+    const titleElement = document.querySelector('#FeaturedPost1 .title');
+    if (titleElement) {
+        titleElement.addEventListener('click', function () {
+            window.location.href = 'https://link-to-newest-post.com'; // Change the URL to your desired link
+        });
+    }
+
+    // Make the entire post-summary clickable
+    const postSummaryElement = document.querySelector('.post-summary');
+    if (postSummaryElement) {
+        postSummaryElement.addEventListener('click', function () {
+            window.location.href = 'https://link-to-post-summary.com'; // Change the URL to your desired link
+        });
+    }
+
+    // Make the image clickable
+    const postImageElement = document.querySelector('.post-summary img');
+    if (postImageElement) {
+        postImageElement.addEventListener('click', function () {
+            window.location.href = 'https://link-to-image.com'; // Change the URL to your desired link
+        });
+    }
+});
+// ]]>
+</script>
+  </body>
+</html>
