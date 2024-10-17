@@ -1,0 +1,81 @@
+<!-- Define Variables in the Template -->
+<b:variable name='searchDefaultColor' default='#131314' type='color' value='#131314'/>
+<b:variable name='searchHoverColor' default='#050505' type='color' value='#050505'/>
+<b:variable name='searchGlowColor' default='rgba(236, 236, 235, 0.6)' type='color' value='rgba(236, 236, 235, 0.6)'/>
+<b:variable name='searchTextColor' default='#ffffff' type='color' value='#ffffff'/>
+<b:variable name='buttonIconColor' default='#ececeb' type='color' value='#ececeb'/>
+
+<b:skin><![CDATA[
+/* Search Bar */
+.search-bar {
+  width: 600px;
+  height: 40px;
+  max-width: 100%;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease; /* Glow effect transition */
+}
+
+/* Add Glow on Hover */
+.search-bar:hover,
+.search-bar:focus-within {
+  box-shadow: 0 0 2px 2px <expr:variable name='searchGlowColor'/>; /* Dynamic glow color */
+}
+
+.search-bar form {
+  display: flex;
+  background-color: <expr:variable name='searchDefaultColor'/>; /* Dynamic default background color */
+  border-radius: 20px;
+  overflow: hidden;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0 15px;
+  border: none;
+  background: transparent;
+  color: <expr:variable name='searchTextColor'/>; /* Dynamic text color */
+  outline: none;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: <expr:variable name='buttonIconColor'/>; /* Dynamic button icon color */
+}
+
+.search-bar:hover form,
+.search-bar:focus-within form {
+  background-color: <expr:variable name='searchHoverColor'/>; /* Dynamic hover background color */
+}
+
+/* Center the Search Bar */
+.center-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+]]></b:skin>
+
+<!-- Center Section: Search Bar -->
+<div class='center-section'>
+  <div class='search-bar'>
+    <form action='/search' method='get' role='search'>
+      <input name='q' placeholder='Search...' type='search'/>
+      <button class='search-bar-submit'>
+        <span class='material-icons'>search</span>
+      </button>
+    </form>
+  </div>
+</div>
