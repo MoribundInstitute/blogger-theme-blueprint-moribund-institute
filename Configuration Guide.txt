@@ -1,1 +1,66 @@
 🛠️ Custom Blogger Theme — Configuration Guide
+STEP 1 — HEAD BLOCK CUSTOMIZATION
+=================================
+
+📍 Location: Near the top of the template, inside the <head> tag.
+
+🔎 Recommended Search Terms:
+- YOUR SITE NAME HERE
+- og:title
+- twitter:title
+- favicon-16.png
+- googleapis.com/css2?family=IM+Fell+English
+
+────────────────────────────────────────────────────────────
+
+✅ 1. Replace Fonts (Optional)
+─────────────────────────────
+The default font is IM Fell English. If you’d like to use another Google Font:
+- Replace this line:
+  <link href='https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap' rel='stylesheet'/>
+- With your preferred font:
+  <link href='https://fonts.googleapis.com/css2?family=YourFontName&display=swap' rel='stylesheet'/>
+
+
+✅ 2. Update Favicon URLs
+─────────────────────────
+Find and replace all favicon and Apple icon links like this:
+  href='https://yourdomain.com/favicon-16.png'
+Replace them with your actual hosted image URLs.
+
+💡 Tip: Use https://realfavicongenerator.net to generate all sizes.
+
+
+✅ 3. Customize Social Preview Meta Tags
+───────────────────────────────────────
+These control how your site appears when shared on social media:
+
+Replace these with your content:
+
+<meta property='og:title' content='YOUR SITE NAME HERE'/>
+<meta property='og:description' content='A brief description of your website for social sharing.'/>
+<meta property='og:image' content='https://yourdomain.com/og-preview-image.png'/>
+<meta property='og:url' content='https://yourdomain.com/'/>
+
+<meta name='twitter:site' content='@YourTwitterHandle'/>
+<meta name='twitter:title' content='YOUR SITE NAME HERE'/>
+<meta name='twitter:description' content='Your short site description here.'/>
+<meta name='twitter:image' content='https://yourdomain.com/twitter-preview.png'/>
+
+Recommended image sizes:
+- OG image: 1200×630px
+- Twitter image: 400×400px
+
+
+✅ 4. (Optional) Remove jQuery
+─────────────────────────────
+If your template does not use jQuery, remove this line to improve performance:
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+
+📝 Summary:
+- Update branding and preview data.
+- Host images yourself (Neocities, GitHub, Blogger storage).
+- Fonts and metadata are fully customizable.
+
