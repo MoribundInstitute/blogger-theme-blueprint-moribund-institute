@@ -1,0 +1,40 @@
+<b:skin><![CDATA[
+:root {
+  /* 🎨 PRIMARY COLORS — Customize your theme colors */
+  --color-text-main: #yourTextColor; /* Main body text color */
+  --color-background: #yourBackgroundColor; /* Page background */
+  --color-border: #yourBorderColor; /* Used for outlines and accents */
+  --color-link: #yourLinkColor; /* Default link color */
+  --color-link-hover: #yourLinkHoverColor;
+  --color-on-surface: #yourOnSurfaceTextColor; /* Text on cards or sections */
+
+  /* ✍️ FONTS — Swap for your preferred Google Fonts */
+  --font-primary: 'Your Primary Font', serif; /* Body and headings */
+  --font-secondary: 'Your Secondary Font', serif; /* Accents or subtitles */
+
+  /* 📐 LAYOUT VALUES — Adjust spacing and widths */
+  --max-width-wrapper: 1400px;
+  --padding-general: 20px;
+  --main-container-max-width: 95%;
+  --border-width: 2px;
+  --sidebar-width: 250px;
+
+  /* 🔍 SEARCH / GLOW STYLES — Optional effects */
+  --color-search-default: #yourSearchIconColor;
+  --color-search-hover: #yourSearchHoverColor;
+  --color-search-glow: rgba(0, 255, 247, 0.3); /* Glow or highlight effect */
+
+  /* 🧩 CATEGORY/LABEL STYLING — Used for tag buttons */
+  --category-item-bg: #yourCategoryBackground;
+  --category-item-hover-bg: #yourCategoryHoverBackground;
+  --category-item-border: #yourCategoryBorder;
+  --category-item-color: #yourCategoryTextColor;
+
+  /* 🧭 PAGINATION STYLING — If using page numbers */
+  --page-number-bg: #yourPageNumberBackground;
+  --page-number-border: #yourPageNumberBorder;
+  --page-number-color: #yourPageNumberText;
+  --page-number-active-bg: #yourActivePageBackground;
+  --page-number-active-color: #yourActivePageText;
+}
+]]></b:skin>
