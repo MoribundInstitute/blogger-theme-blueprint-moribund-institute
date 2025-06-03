@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html
+  b:css='false'
+  b:defaultwidgetversion='2'
+  b:layoutsVersion='3'
+  b:responsive='true'
+  expr:dir='data:blog.languageDirection'
+  expr:lang='data:blog.locale'
+  xmlns='http://www.w3.org/1999/xhtml'
+  xmlns:b='http://www.google.com/2005/gml/b'
+  xmlns:data='http://www.google.com/2005/gml/data'
+  xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+
+  <!-- ✅ Essential Fonts -->
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' rel='stylesheet'/>
+
+  <!-- ✅ Optional: Disable font load in layout editor -->
+  <b:if cond='!data:view.isLayoutMode'>
+    <link href='https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap' rel='stylesheet'/>
+  </b:if>
+
+  <!-- ✅ Viewport & Mobile Settings -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0'/>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+  <meta name='HandheldFriendly' content='true'/>
+  <meta name='MobileOptimized' content='width'/>
+  <meta name='apple-mobile-web-app-capable' content='yes'/>
+
+  <!-- ✅ Dynamic Page Title -->
+  <title><data:view.title.escaped/></title>
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- ⚠️ CUSTOM FAVICONS — Replace with your own URLs -->
+  <!-- Use https://realfavicongenerator.net for full favicon packs -->
+  <link rel='icon' type='image/png' sizes='16x16' href='https://yourdomain.com/favicon-16.png'/>
+  <link rel='icon' type='image/png' sizes='32x32' href='https://yourdomain.com/favicon-32.png'/>
+  <link rel='icon' type='image/png' sizes='48x48' href='https://yourdomain.com/favicon-48.png'/>
+  <link rel='icon' type='image/png' sizes='192x192' href='https://yourdomain.com/favicon-192.png'/>
+  <link rel='icon' type='image/png' sizes='256x256' href='https://yourdomain.com/favicon-256.png'/>
+
+  <!-- Apple Touch Icons -->
+  <link rel='apple-touch-icon' sizes='57x57' href='https://yourdomain.com/apple-icon-57.png'/>
+  <link rel='apple-touch-icon' sizes='60x60' href='https://yourdomain.com/apple-icon-60.png'/>
+  <link rel='apple-touch-icon' sizes='72x72' href='https://yourdomain.com/apple-icon-72.png'/>
+  <link rel='apple-touch-icon' sizes='76x76' href='https://yourdomain.com/apple-icon-76.png'/>
+  <link rel='apple-touch-icon' sizes='114x114' href='https://yourdomain.com/apple-icon-114.png'/>
+  <link rel='apple-touch-icon' sizes='120x120' href='https://yourdomain.com/apple-icon-120.png'/>
+  <link rel='apple-touch-icon' sizes='144x144' href='https://yourdomain.com/apple-icon-144.png'/>
+  <link rel='apple-touch-icon' sizes='152x152' href='https://yourdomain.com/apple-icon-152.png'/>
+
+  <!-- ✅ Social Sharing Metadata (Edit for your site) -->
+  <meta name='msapplication-TileColor' content='#ffffff'/>
+  <meta property='og:title' content='YOUR SITE NAME HERE'/>
+  <meta property='og:description' content='A brief description of your website for social sharing.'/>
+  <meta property='og:image' content='https://yourdomain.com/og-preview-image.png'/> <!-- 1200x630 recommended -->
+  <meta property='og:url' content='https://yourdomain.com/'/>
+
+  <meta name='twitter:card' content='summary_large_image'/>
+  <meta name='twitter:site' content='@YourTwitterHandle'/>
+  <meta name='twitter:title' content='YOUR SITE NAME HERE'/>
+  <meta name='twitter:description' content='Your short site description here.'/>
+  <meta name='twitter:image' content='https://yourdomain.com/twitter-preview.png'/> <!-- ideally square -->
+
+  <!-- ✅ jQuery (if needed by theme/scripts) -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
