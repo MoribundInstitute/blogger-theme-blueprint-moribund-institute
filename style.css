@@ -37,4 +37,210 @@
   --page-number-active-bg: #yourActivePageBackground;
   --page-number-active-color: #yourActivePageText;
 }
+/* === Global Styles === */
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  position: relative;
+  line-height: 1.6em;
+
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.015), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.01), transparent 50%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* === Link Styles === */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: none;
+}
+/* === Glow-on-Hover Elements === */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, 
+p:hover, a:hover, span:hover {
+  text-shadow: 0 0 10px var(--color-glow);
+  transition: text-shadow 0.3s ease;
+}
+h1, h2, h3, h4, h5, h6,
+p, a:not(.material-icons):not(.material-symbols-rounded),
+span:not(.material-icons):not(.material-symbols-rounded) {
+  font-family: var(--font-primary);
+  transition: text-shadow 0.3s ease;
+}
+/* === Header Styles === */
+.header {
+  width: 100%;
+  max-width: var(--max-width-wrapper);
+  padding: var(--padding-general);
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.header-container {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-bg-gradient-start), var(--color-bg-gradient-end));
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  z-index: 1;
+  height: 200px;
+  box-shadow: 0 0 6px var(--color-glow-soft);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.header-container:hover {
+  box-shadow: 0 0 10px var(--color-glow-hover);
+  transform: scale(1.005);
+}
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--header-overlay);
+  border-radius: 8px;
+  z-index: -1;
+}
+/* === Logo Styles === */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: 21%;
+  overflow: visible;
+  border-radius: 10px;
+  background-color: var(--color-bg-logo); /* formerly #0a0a0a */
+}
+.header-logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--color-glow);
+}
+.header-logo:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 20px var(--color-glow-strong); /* formerly rgba(103, 255, 240, 1) */
+}
+/* === Notification Bell === */
+.bell-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.bell-icon {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  left: 510px;
+  top: -100px;
+  color: var(--color-link-hover); /* formerly #d0f9f7 */
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+.bell-icon:hover {
+  color: var(--color-text-main); /* white */
+  box-shadow:
+    0 0 10px var(--color-glow),
+    0 0 20px var(--color-glow-soft);
+}
+/* === Dropdown Notification === */
+.notification-container {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: -70px;
+  left: 390px;
+  background-color: var(--color-bg-popup); /* formerly #0e0e10 */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--color-shadow-dark); /* formerly rgba(0, 0, 0, 0.6) */
+  min-width: 250px;
+  max-width: 350px;
+  z-index: 9999;
+  overflow: auto;
+  transition: box-shadow 0.3s ease;
+}
+.notification-container .dropdown-menu.active {
+  display: block;
+}
+.notification-container:hover .dropdown-menu {
+  box-shadow: 0 0 12px var(--color-glow-hover); /* formerly rgba(103, 255, 240, 0.8) */
+}
+/* === Featured Post Title === */
+#FeaturedPost1 .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-link-hover);
+  margin-bottom: 1px;
+  text-align: center;
+  display: block;
+  padding: 10px;
+}
+#FeaturedPost1 .title a {
+  text-decoration: none;
+  color: var(--color-link-hover);
+  transition: text-shadow 0.3s ease;
+}
+#FeaturedPost1 .title a:hover {
+  color: var(--color-text-main);
+  text-shadow: 0 0 8px var(--color-glow-hover);
+  text-decoration: none;
+}
+/* === Post Summary === */
+.post-summary {
+  padding: 5px 10px;
+  color: var(--color-link-hover);
+  overflow: hidden;
+  margin-top: 1px;
+}
+.post-summary h3 a {
+  color: var(--color-link-hover);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: text-shadow 0.3s ease;
+}
+.post-summary h3 a:hover {
+  color: var(--color-text-main);
+  text-shadow: 0 0 8px var(--color-glow-hover);
+  text-decoration: none;
+}
+.post-summary p {
+  color: var(--color-link-hover);
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.post-summary img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 8px;
+  transition: box-shadow 0.3s ease;
+}
+.post-summary img:hover {
+  box-shadow: 0 0 12px var(--color-glow-hover);
+}
+
 ]]></b:skin>
